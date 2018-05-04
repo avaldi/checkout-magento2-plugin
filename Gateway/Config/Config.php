@@ -19,6 +19,7 @@ class Config extends BaseConfig {
 
     const KEY_ENVIRONMENT = 'environment';
     const KEY_ACTIVE = 'active';
+    const KEY_ACTIVE_APPLE_PAY = 'active';
     const KEY_DEBUG = 'debug';
     const KEY_CC_TYPES = 'cctypes';
     const KEY_USE_CVV = 'useccv';
@@ -250,6 +251,19 @@ class Config extends BaseConfig {
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $quote = $objectManager->create('Magento\Checkout\Model\Session')->getQuote();
         return (bool) in_array($quote->getQuoteCurrencyCode(), $this->getAcceptedCurrencies());
+    }
+
+    /**
+     * Determines if Apple Pay is active.
+     *
+     * @return bool
+     */
+    public function isActiveApplePay() {
+        if (!$this->getValue(self::KEY_ACTIVE_APPLE_PAY)) {
+            return false;
+        }
+
+        return true;  
     }
 
     /**

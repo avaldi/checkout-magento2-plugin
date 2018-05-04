@@ -25,6 +25,8 @@ class ConfigProvider implements ConfigProviderInterface {
 
     const THREE_DS_CODE = 'checkout_com_3ds';
 
+    const CODE_APPLE_PAY = 'checkout_com_apple_pay';
+
     /**
      * @var Config
      */
@@ -66,6 +68,7 @@ class ConfigProvider implements ConfigProviderInterface {
      */
     public function getConfig() {
         $isActive = $this->config->isActive();
+        $isActiveApplePay = $this->config->isActiveApplePay();
 
         return [
             'payment' => [
@@ -102,6 +105,10 @@ class ConfigProvider implements ConfigProviderInterface {
                     'vault_title' => $this->config->getVaultTitle(),
                     'order_creation' => $this->config->getOrderCreation(),
                     'card_autosave' => $this->config->isCardAutosave(),
+                ],
+
+                self::CODE_APPLE_PAY => [
+                    'isActive' => $isActiveApplePay,
                 ],
             ],
         ];

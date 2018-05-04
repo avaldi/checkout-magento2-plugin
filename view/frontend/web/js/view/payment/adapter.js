@@ -24,11 +24,27 @@
         },
 
         /**
+         * Get Apple Pay payment name.
+         * @returns {String}
+         */
+        getCodeApplePay: function () {
+            return 'checkout_com_apple_pay';
+        },
+
+        /**
          * Get payment configuration array.
          * @returns {Array}
          */
         getPaymentConfig: function() {
             return window.checkoutConfig.payment[this.getCode()];
+        },
+
+        /**
+         * Get payment configuration array.
+         * @returns {Array}
+         */
+        getPaymentConfigApplePay: function() {
+            return window.checkoutConfig.payment[this.getCodeApplePay()];
         },
 
         /**

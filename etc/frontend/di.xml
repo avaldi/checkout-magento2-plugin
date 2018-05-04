@@ -20,6 +20,7 @@
         <arguments>
             <argument name="methodCodes" xsi:type="array">
                 <item name="checkout_com" xsi:type="const">CheckoutCom\Magento2\Model\Ui\ConfigProvider::CODE</item>
+                <item name="checkout_com_apple_pay" xsi:type="const">CheckoutCom\Magento2\Model\Ui\ConfigProvider::CODE_APPLE_PAY</item>
             </argument>
         </arguments>
     </type>
