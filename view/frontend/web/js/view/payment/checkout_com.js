@@ -34,7 +34,7 @@
             rendererList.push(
                 {
                     type: 'checkout_com_apple_pay',
-                    component: 'CheckoutCom_Magento2/js/view/payment/method-renderer/' + paymentMethod.integration.type
+                    component: 'CheckoutCom_Magento2/js/view/payment/method-renderer/apple-pay'
                 }
             );
         }

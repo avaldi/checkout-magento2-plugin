@@ -31,7 +31,7 @@ define(
         return Component.extend({
             defaults: {
                 active: true,
-                template: 'CheckoutCom_Magento2/payment/embedded',
+                template: 'CheckoutCom_Magento2/payment/apple-pay',
                 code: 'checkout_com',
                 card_token_id: null,
                 redirectAfterPlaceOrder: true
